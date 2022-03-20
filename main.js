@@ -7,7 +7,7 @@ const { color } = require("./utils")
 const chatHandler = require("./event/chat_event")
 const joinhandler = require("./event/group_event")
 
-const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) })
+const store = makeInMemoryStore({ logger: Pino().child({ level: 'silent', stream: 'store' }) })
 store.readFromFile('./baileys-md.json')
 setInterval(() => {
 	store.writeToFile('./baileys-md.json')
